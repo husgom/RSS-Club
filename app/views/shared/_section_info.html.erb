@@ -1,0 +1,7 @@
+		<% if section_info.info_type.base_type.name == "String" %>
+                    <%= section_info.name %> <br>
+                    <%= text_field "demand[section_info_attributes][#{section.section_type_id}][#{section_info.info_type_id}]", :value%><br>
+                <% elsif section_info.info_type.base_type.name == "Number" %>
+                    <%= section_info.name %> <br>
+                    <%= text_field "demand[section_info_attributes][#{section.section_type_id}][#{section_info.info_type_id}]", :numeric_value, :size => 6%><br>
+                <% end %>

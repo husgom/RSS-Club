@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+valid_company:
+  name: "i2i"
+  id: "1"
+  name_in_demand: "bir bilişim şirketi"
+  status_id: "12"

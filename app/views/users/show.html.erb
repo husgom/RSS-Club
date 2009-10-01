@@ -1,0 +1,64 @@
+<% if @user.status_id == Status::User::VALPENDING %>
+  <div class="blankBar">
+    <h1>Dikkat!</h1>
+    <p>İhale şu anda "<b><%= @user.status.name %></b>" durumunda. E-postanıza gelen onay koduna tıkladığınızda üyeliğiniz onaylanacak ve sistem yöneticileri üyeliğinizi onaylayabilecektir.</p>
+  </div>
+<% end %>
+<% if @user.status_id == Status::User::VALIDATED %>
+  <div class="blankBar">
+    <h1>Dikkat!</h1>
+    <p>İhale şu anda "<b><%= @user.status.name %></b>" durumunda. Sistem yöneticileri üyeliğiniz aktif hale getirdikten sonra sistemi bütün özellikleri ile kullanmaya başlayabilirsiniz.</p>
+  </div>
+<% end %>
+<h1><%= @user.contact_name%></h1>
+
+<div class="section">
+  <h2>Temel Bilgiler</h2>
+  <div class="container">
+    <div class="label">Ad Soyad: </div>
+    <div class="value"><%= @user.contact_name %></div>
+    <div class="label">Kullanıcı Adı: </div>
+    <div class="value"><%= @user.name %></div>
+    <div class="label">E-posta: </div>
+    <div class="value"><%= @user.email %></div>
+    <div class="label">Kullanıcı Tipi: </div>
+    <div class="value"><%= @user.user_type.name %></div>
+    <div class="label">Yönetici: </div>
+    <div class="value"><%= @user.admin ? "Evet" : "Hayır" %></div>
+    <div class="label">Durum: </div>
+    <div class="value"><%= @user.status.name %></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Firma Bilgileri</h2>
+  <div class="container">
+    <div class="label">Firma Adı: </div>
+    <div class="value"><%= @company.name %></div>
+    <div class="label">Durum: </div>
+    <div class="value"><%= @company.status.name %></div>
+  </div>
+</div>
+<div class="buttons">
+  <%= link_to image_tag("edit.gif"), :action => :edit, :id=> @user %>
+</div>
+
+
+<h1>Şifre İşlemleri</h1>
+<% form_tag :action=>"change_password", :id => @user do %>
+  <div class="section">
+    <h2>Şifre Değiştirme</h2>
+    <div class="container">
+      <div class="label">Mevcut Şifre: </div>
+      <%= password_field_tag :old_password, nil %>
+      <div class="label">Yeni Şifre: </div>
+      <%= password_field_tag :new_password, nil %>
+      <div class="label">Yeni Şifre Onayı: </div>
+      <%= password_field_tag :new_password_confirmation, nil %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= image_submit_tag("save.gif") %>
+  </div>
+<% end %>

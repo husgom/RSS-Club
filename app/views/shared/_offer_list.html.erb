@@ -1,0 +1,22 @@
+<tr class="<%= cycle("row_even", "row_odd", :name => :zebra) %>">
+  <td rowspan="2" align="center">
+    <%= image_tag("status_#{offer_list.status_id.to_s}.png") %>
+  </td>
+  <td class="<%= offer_list.status_id == Status::Offer::NEW ? "new_offer" : "normal_offer" %>">
+      <%= link_to offer_list.user.company_name, :controller => :demands, :action=>:offer_detail, :id => offer_list %>
+  </td>
+  <td>
+      <%= offer_list.price_in_cents %>
+  </td>
+  <td>
+      <%= offer_list.created_at %>
+  </td>
+  <td>
+      <%= link_to "Detay", :controller => :demands, :action=>:offer_detail, :id => offer_list %>
+  </td>
+</tr>
+<tr class="row_desc">
+  <td colspan="4">
+    <%= offer_list.notes %>
+  </td>
+</tr>

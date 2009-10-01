@@ -1,0 +1,7 @@
+        <% if section_info_view.info_type.base_type.name == "String" %>
+          <div class="label"><%= section_info_view.name %> </div>
+          <div class="value"><%= section_info_view.value%> &nbsp;</div>
+        <% elsif section_info_view.info_type.base_type.name == "Number" %>
+          <div class="label"><%= section_info_view.name %> </div>
+          <div class="value"><%= section_info_view.value%> &nbsp;</div>
+        <% end %>

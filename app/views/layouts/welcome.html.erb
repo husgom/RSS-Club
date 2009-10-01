@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>OSAP Tender System:  <%= controller.controller_name %></title>
+                <%= stylesheet_link_tag "site_style.css" %>
+		<%= javascript_include_tag "prototype", "effects", "dragdrop", "controls" %>
+	</head>
+
+        <body>
+
+            <div class="site_header">
+              <div class="container">
+                
+              <div class="user_info_container">
+                <%= session[:user].name if session[:user] %>
+                <%= link_to "Çıkış", :controller=>:login, :action => :logout  %>
+              </div>
+  
+                <div id="menu">
+
+                <%= link_to "Ana Sayfa", "/login"  %>
+
+               <%= link_to "İhaleler", :controller => :demands, :action => :index %>
+
+                <%= link_to "Çıkış", :controller=>:login, :action => :logout  %>
+
+                </div>
+
+
+              </div>
+            </div>
+
+        <div class="body">
+          <div class="page_container" >
+            <div class="content">
+              <div class="leftcolumn">
+               <% if flash[:warning]%>
+                <div class="blankBar">
+                  <h1>Uyarılar</h1>
+                  <p><%= flash[:warning]%></p>
+                </div>
+                <% end %>
+
+                <% if flash[:notice]%>
+                <div class="blankBar">
+                  <p><%= flash[:notice]%></p>
+                </div>
+                <% end %>
+              <%= @content_for_layout %>
+                <p>&nbsp;</p>
+                <div class="bottom">&nbsp;</div>
+              </div>
+              
+              <div class="rightcolumn">
+                 <div class="section">
+                   <h2>İşlemler</h2>
+                  <div class="container">
+                    <h4>Üyelik İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "Sisteme Üye Ol", :controller => :welcome, :action=> :add_company %></li>
+                    <li><%=link_to "Üyelik Aktivasyonu", :controller => :welcome, :action=> :activate_user %></li>
+                    <li><%=link_to "Şifremi Unuttum", :controller => :welcome, :action=> :i_forget_my_password %></li>
+                    </ul>
+                  </div>
+                   
+                  </div>
+                <p>&nbsp;</p>
+                <div class="rbottom">&nbsp;</div>
+
+                 <div class="section">
+                   <h2>Sisteme Giriş</h2>
+                  <div class="container">
+                    <% form_tag "/welcome/login" do %>
+
+                    <div class="label">Kullanıcı Adı: </div>
+                    <%= text_field_tag :name, params[:name] %>
+                    <div class="label">Şifre: </div>
+                    <%= password_field_tag :password, params[:password] %>
+
+                    <div class="buttons">
+                      <%= image_submit_tag("login.gif", :id => "submit") %>
+                    </div>
+                  <% end %>
+                  </div>
+
+                  </div>
+                <p>&nbsp;</p>
+                <div class="rbottom">&nbsp;</div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+	</body>
+</html>
+

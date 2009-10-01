@@ -1,0 +1,18 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+demand_section:
+  name: "İhale Bilgileri"
+  sequence: "10"
+  id: 1
+  onleft: "1"
+  desc: "\xC4\xB0leti\xC5\x9Fim Bilgileri"
+  owner: demand
+
+
+offer_section:
+  name: "Teklif Bilgileri"
+  sequence: "10"
+  id: 2
+  onleft: "1"
+  desc: "\xC4\xB0leti\xC5\x9Fim Bilgileri"
+  owner: offer

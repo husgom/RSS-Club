@@ -1,0 +1,8 @@
+<% header_list = header.split("|") %>
+
+<table class="list_table">
+  <tr class="list_header">
+    <% header_list.each { |caption| %>
+      <td> <%= caption  %></td>
+    <% } %>
+  </tr>

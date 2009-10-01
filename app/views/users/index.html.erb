@@ -1,0 +1,11 @@
+<h1>Kullanıcı Listesi</h1>
+
+<div class="section">
+  <h2>Kullanıcılar</h2>
+  <div class="container">
+        <%= render :partial=> "shared/table_header", :locals => {:header => "Ad Soyad|Kullanıcı Adı|E-posta|Yönetici" } %>
+        <%= render :partial=> "shared/company_user_list", :collection => @users %>
+        <%= render :partial=> "shared/table_footer" %>
+  </div>
+</div>
+

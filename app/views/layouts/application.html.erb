@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>OSAP Tender System:  <%= controller.controller_name %></title>
+                <%= stylesheet_link_tag "site_style.css" %>
+		<%= javascript_include_tag "prototype", "effects", "dragdrop", "controls" %>
+	</head>
+
+        <body>
+
+            <div class="site_header">
+              <div class="container">
+                
+              <div class="user_info_container">
+                <%= session[:user].name if session[:user] %>
+                <%= link_to "Çıkış", :controller=>:login, :action => :logout  %>
+              </div>
+  
+                <div id="menu">
+
+                <%= link_to "Ana Sayfa", "/login"  %>
+
+               <%= link_to "İhaleler", :controller => :demands, :action => :index %>
+
+                <%= link_to "Çıkış", :controller=>:login, :action => :logout  %>
+
+                </div>
+
+
+              </div>
+            </div>
+
+        <div class="body">
+          <div class="page_container" >
+            <div class="content">
+              <div class="leftcolumn">
+               <% if flash[:warning]%>
+                <div class="blankBar">
+                  <h1>Uyarılar</h1>
+                  <p><%= flash[:warning]%></p>
+                </div>
+                <% end %>
+
+                <% if flash[:notice]%>
+                <div class="blankBar">
+                  <p><%= flash[:notice]%></p>
+                </div>
+                <% end %>
+              <%= @content_for_layout %>
+                <p>&nbsp;</p>
+                <div class="bottom">&nbsp;</div>
+              </div>
+              
+              <div class="rightcolumn">
+                 <div class="section">
+                   <h2>İşlemler</h2>
+                  <div class="container">
+                    <h4>İhale İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "İhale Oluştur", :controller => :demands, :action=> :prepare %></li>
+                    <li><%=link_to "İhalelerim", :controller => :demands, :action=> :index %></li>
+                    <li><%=link_to "Tüm İhaleler", :controller => :demands, :action=> :all %></li>
+                    </ul>
+                  </div>
+                   <div class="container">
+                    <h4>Kullanıcı İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "Kullanıcı Oluştur", :controller => :users, :action=> :new %></li>
+                    <li><%=link_to "Firma Kullanıcıları", :controller => :users, :action=> :index %></li>
+                    </ul>
+                  </div>
+                    <div class="rbottom">&nbsp;</div>
+
+                   <div class="section">
+                   <h2>Yönetici İşlemler</h2>
+
+                   <div class="container">
+                    <h4>Şablon İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "Şablonlar", :controller => :demand_types, :action=> :index %></li>
+                    <li><%=link_to "Şablon Oluştur", :controller => :demand_types, :action=> :new %></li>
+                    </ul>
+                  </div>
+
+                   <div class="container">
+                    <h4>Şablon Bölümü İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "Şablon Bölümleri", :controller => :section_types, :action=> :index %></li>
+                    <li><%=link_to "Şablon Bölümü Oluştur", :controller => :section_types, :action=> :new %></li>
+                    </ul>
+                  </div>
+
+                  <div class="container">
+                    <h4>Teklif İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "Teklif şablonları", :controller => :section_types, :action=> :index_tender %></li>
+                    <li><%=link_to "Teklif Şablonu Oluştur", :controller => :section_types, :action=> :new_tender %></li>
+                    </ul>
+                  </div>
+
+                   <div class="container">
+                    <h4>Bilgi Tipi İşlemleri</h4>
+                    <ul>
+                    <li><%=link_to "Bilgi Tipleri", :controller => :info_types, :action=> :index %></li>
+                    <li><%=link_to "Bilgi Tipi Oluştur", :controller => :info_types, :action=> :new %></li>
+                    </ul>
+                  </div>
+
+                  </div>
+                <p>&nbsp;</p>
+                <div class="rbottom">&nbsp;</div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+	</body>
+</html>
+

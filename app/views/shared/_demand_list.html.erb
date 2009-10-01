@@ -1,0 +1,11 @@
+<tr class="<%= cycle("row_even", "row_odd", :name => :zebra) %>">
+  <td>
+      <%= link_to demand_list.name, :controller => :demands, :action=>:show, :id => demand_list %>
+  </td>
+  <td>
+      <%= demand_list.demand_type.name %>
+  </td>
+  <td>
+      <%= demand_list.status.name %>
+  </td>
+</tr>

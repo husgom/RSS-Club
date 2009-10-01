@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+valid_user:
+  email: huseyin@gomleksizoglu.com
+  company_id: 9
+  contact_name: Deniz Baykal
+  salt: "282893100.961363463506695"
+  hashed_password: 1c8479e5bd9aa128c3091068f7d692aa9644bfb4
+  name: chpli
+  id: 1
+  status_id: 14
+  admin: 0
+  user_type_id: 2

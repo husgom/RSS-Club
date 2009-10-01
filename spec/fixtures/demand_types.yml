@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+kargo:
+  name: "Kargo \xC4\xB0halesi"
+  id: "1"
+  offer_type_id: "9"
+
+yurtici:
+  name: "OSAP24 - Yurtd\xC4\xB1\xC5\x9F\xC4\xB1 Lojistik \xC4\xB0halesi"
+  id: "2"
+  offer_type_id: "9"
+
+yurtdisi:
+  name: "OSAP24 - Yurti\xC3\xA7i Lojistik \xC4\xB0halesi"
+  id: "3"
+  offer_type_id: "0"

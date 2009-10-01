@@ -1,0 +1,15 @@
+<tr class="<%= cycle("row_even", "row_odd", :name => :zebra) %>">
+  <td>
+    <%= company_user_list.contact_name %>
+  </td>
+  <td>
+      <%= link_to company_user_list.name, :action=>:show, :id => company_user_list %>
+  </td>
+  <td>
+    <%= company_user_list.email %>
+  </td>
+  <td>
+    <%= company_user_list.admin ? "Evet": "Hayır" %>
+  </td>
+
+</tr>

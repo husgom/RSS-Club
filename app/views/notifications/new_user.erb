@@ -1,0 +1,12 @@
+<p>Merhaba <%= @user_name %>,</p>
+
+<p><b>OSAP İhale Sistemine Hoşgeldiniz.</b></p>
+
+<p>Üyeliğinizin ilk adımı için e-posta adresinizi onaylamanız gerekmektedir. Bunun için aşağıdaki linki kullanabilirsiniz.</p>
+
+<p><a href="http://<%= HOST %>/welcome/activate_user?key=<%=@request_code%>">http://<%= HOST %>/welcome/activate_user?key=<%=@request_code%></a></p>
+
+<p>
+Saygılarımızla,<br>
+OSAP Yönetimi
+</p>

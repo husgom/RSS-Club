@@ -1,0 +1,12 @@
+<tr class="<%= cycle("row_even", "row_odd", :name => :zebra) %>">
+  <td>
+      <%= link_to section_type_list.name, :action=>:show, :id => section_type_list %>
+  </td>
+  <td>
+    <%= section_type_list.desc %>
+  </td>
+  <td align="center">
+    <%= section_type_list.sequence %>
+  </td>
+
+</tr>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+attribute_1:
+  sequence: 10
+  id: 1
+  section_type_id: 1
+  info_type_id: 1
+
+attribute_2:
+  sequence: 20
+  id: 2
+  section_type_id: 1
+  info_type_id: 2
+
+attribute_3:
+  sequence: 10
+  id: 3
+  section_type_id: 2
+  info_type_id: 1
+
+attribute_4:
+  sequence: 20
+  id: 4
+  section_type_id: 2
+  info_type_id: 2

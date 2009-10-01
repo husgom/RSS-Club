@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+adres:
+  name: Adres
+  id: "1"
+  base_type_id: "1"
+  desc: Adres
+
+adet:
+  name: Adet
+  id: "2"
+  base_type_id: "2"
+  desc: Adet

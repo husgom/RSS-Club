@@ -1,0 +1,62 @@
+<h1>Ana Sayfa</h1>
+
+<div class="blankBar">
+    <h1>Hoşgeldiniz.</h1>
+    <p>Yeni bir ihale oluşturmak için yandaki <b>İhale oluştur</b> linkini kullanabilirsiniz.</p>
+  </div>
+
+
+<% if @my_demands.size > 0 %>
+  <div class="section">
+    <h2>İhalelerim</h2>
+    <div class="container">
+        <%= render :partial=> "shared/table_header", :locals => {:header => "İhale Adı|İhale Tipi|Durum" } %>
+        <%= render :partial=> "shared/demand_list", :collection => @my_demands, :locals => {:zebra => "row_add"} %>
+        <%= render :partial=> "shared/table_footer" %>
+    </div>
+  </div>
+<% end %>
+
+
+<div class="section">
+    <h2>Son ihaleler</h2>
+    <div class="container">
+        <% reset_cycle(:zebra) %>
+        <%= render :partial=> "shared/table_header", :locals => {:header => "İhale Adı|İhale Tipi|Durum" } %>
+        <%= render :partial=> "shared/demand_list", :collection => @demands, :locals => {:zebra => "row_add"} %>
+        <%= render :partial=> "shared/table_footer" %>
+    </div>
+  </div>
+
+<% if @my_offers.size > 0  %>
+  <div class="section">
+    <h2>Son Tekliflerim</h2>
+    <div class="container">
+        <% reset_cycle(:zebra) %>
+        <%= render :partial=> "shared/table_header", :locals => {:header => "<center>Durum</center>|Firma Adı|İhale Adı|Fiyat|Tarih|İşlem" } %>
+        <%= render :partial=> "shared/offer_full_list", :collection => @my_offers, :locals => {:zebra => "row_add"} %>
+        <%= render :partial=> "shared/table_footer" %>
+    </div>
+  </div>
+<% end %>
+
+<% if @offers.size > 0 %>
+<div class="section">
+    <h2>Son Teklifler</h2>
+    <div class="container">
+        <% reset_cycle(:zebra) %>
+        <%= render :partial=> "shared/table_header", :locals => {:header => "<center>Durum</center>|Firma Adı|İhale Adı|Fiyat|Tarih|İşlem" } %>
+        <%= render :partial=> "shared/offer_full_list", :collection => @offers, :locals => {:zebra => "row_add"} %>
+        <%= render :partial=> "shared/table_footer" %>
+    </div>
+  </div>
+<% end %>
+
+  <div class="section">
+    <h2>Son Haberler</h2>
+    <div class="container">
+      - Haber 1 <br>
+      - Haber 2 <br>
+    </div>
+  </div>
+

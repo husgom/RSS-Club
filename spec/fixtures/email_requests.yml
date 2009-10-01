@@ -1,0 +1,6 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+new_user:
+  record_id: "1"
+  code: 3c9926dadf6b07428ece7b7f78913e6b4c49e9dc
+  action: "new_user"

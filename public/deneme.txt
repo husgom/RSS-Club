@@ -1,0 +1,3 @@
+# Phusion Passenger Start
+PassengerEnabled off
+# Phusion Passenger End
